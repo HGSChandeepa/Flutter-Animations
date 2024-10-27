@@ -25,7 +25,7 @@ class _HomePageAnimationState extends State<HomePageAnimation>
     logoFadeAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
 
     slideAnimation = Tween(
-      begin: const Offset(-1, -1),
+      begin: const Offset(0, 1),
       end: Offset.zero,
     ).animate(
       CurvedAnimation(
@@ -37,6 +37,14 @@ class _HomePageAnimationState extends State<HomePageAnimation>
     scaleAnimation = Tween<double>(begin: 0, end: 1).animate(controller);
 
     controller.forward();
+  }
+
+  //dispose the controller
+
+  @override
+  dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override

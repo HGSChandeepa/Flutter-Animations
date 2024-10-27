@@ -31,6 +31,13 @@ class _RadialProgressAnimationState extends State<RadialProgressAnimation>
     animation = Tween(begin: 0.0, end: widget.progress).animate(controller);
   }
 
+  //dispose the controller
+  @override
+  dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
